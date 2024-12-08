@@ -4,11 +4,9 @@
   become: true
   tasks:
 
-  - name: update repository index
-    apt:  
-      update_cache: yes
-
-  - name: install apache2 package 
-    apt:  
-      name: apache2
+  - name: install apache package 
+    package: 
+      name: "{{ apache_package }}"
       state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"

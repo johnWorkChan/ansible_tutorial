@@ -1,2 +1,2 @@
-[nodes]
-79.72.80.149 ansible_user=ubuntu
+[web_servers]
+79.72.80.149 apache_package=apache2 ansible_user=ubuntu
