@@ -1,0 +1,15 @@
+---
+
+- hosts: web_servers
+  become: true
+  tasks:
+
+  - name: copy default html file for site
+    copy:
+      remote_src: yes
+      src: default_site.html
+      dest: /var/www/html/index2.html
+      owner: root
+      group: root
+      mode: 0644
+
